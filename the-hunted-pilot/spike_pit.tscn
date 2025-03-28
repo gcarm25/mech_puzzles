@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgvee6m84tdx7"]
+
+[ext_resource type="Texture2D" uid="uid://ieehqtvqxdoi" path="res://assets/spike_pit.png" id="1_eqdfo"]
+[ext_resource type="Script" path="res://spike_pit.gd" id="1_gp53v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emghv"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1hnd"]
+atlas = ExtResource("1_eqdfo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykh1d"]
+atlas = ExtResource("1_eqdfo")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8dml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1hnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykh1d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Node2D" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 65
+script = ExtResource("1_gp53v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_emghv")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_c8dml")
+autoplay = "default"
+frame_progress = 0.381657
+
+[node name="CollisionRay" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+target_position = Vector2(5, 0)
+collision_mask = 2

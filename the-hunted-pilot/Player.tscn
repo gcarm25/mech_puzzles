@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxalv1feayja7"]
+[gd_scene load_steps=7 format=3 uid="uid://bxalv1feayja7"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_a87xj"]
 [ext_resource type="Texture2D" uid="uid://de8sv34s0g2sr" path="res://assets/Player Test Sprite 1.png" id="2_aigru"]
+[ext_resource type="PackedScene" uid="uid://b0dbfkjmc5fwr" path="res://gravity_orb.tscn" id="2_h2yr2"]
 [ext_resource type="Texture2D" uid="uid://dh4ocl4eoxkwy" path="res://assets/Player Test Sprite 2.png" id="3_5lpqd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xty1c"]
@@ -24,13 +25,40 @@ size = Vector2(24.2449, 24.2449)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(32, -32)
 scale = Vector2(1.9798, 1.9798)
+collision_mask = 192
 script = ExtResource("1_a87xj")
+gravity_orb = ExtResource("2_h2yr2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.5153, -4.04081)
 sprite_frames = SubResource("SpriteFrames_xty1c")
-frame_progress = 0.223102
+autoplay = "default"
+frame_progress = 0.415419
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.90735e-06)
 shape = SubResource("RectangleShape2D_gmplw")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(12.1224, 0)
+scale = Vector2(1, 1)
+target_position = Vector2(20.2041, 0)
+collision_mask = 194
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+position = Vector2(0, -12.1224)
+scale = Vector2(1, 1)
+target_position = Vector2(0, -20.2041)
+collision_mask = 194
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+position = Vector2(0, 12.1224)
+scale = Vector2(1, 1)
+target_position = Vector2(0, 20.2041)
+collision_mask = 194
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-12.1224, 0)
+scale = Vector2(1, 1)
+target_position = Vector2(-20.2041, 0)
+collision_mask = 194

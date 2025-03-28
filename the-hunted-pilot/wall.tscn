@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://e134rf60581k"]
+[gd_scene load_steps=3 format=3 uid="uid://bp5c3m6oauh4x"]
 
 [ext_resource type="Texture2D" uid="uid://dh5jkk0mnmc1s" path="res://assets/Test Wall.png" id="1_y8as7"]
 
@@ -6,6 +6,7 @@
 size = Vector2(64, 64)
 
 [node name="Node2D" type="StaticBody2D"]
+collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 32)
