@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cns23fhbeuk1i"]
+[gd_scene load_steps=4 format=3 uid="uid://cm62eu3rfxiyq"]
 
 [ext_resource type="Script" path="res://sp_box.gd" id="1_g2a1i"]
 [ext_resource type="Texture2D" uid="uid://dxiwbw6ne3gxv" path="res://assets/SP_Box.png" id="1_wj3cv"]
@@ -7,6 +7,8 @@
 size = Vector2(64, 64)
 
 [node name="Node2D" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 195
 script = ExtResource("1_g2a1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk3jdtftw38dn"]
+
+[ext_resource type="PackedScene" uid="uid://xauuky34lbnw" path="res://menu_buttons/Start_game.tscn" id="2_qhtjn"]
+[ext_resource type="PackedScene" uid="uid://q4cgarkercop" path="res://menu_buttons/Level_select.tscn" id="3_cm05x"]
+[ext_resource type="PackedScene" uid="uid://b0h3wlv2vbgqd" path="res://menu_buttons/Options.tscn" id="4_3s3pn"]
+[ext_resource type="PackedScene" uid="uid://falutk72koy0" path="res://menu_buttons/Quit.tscn" id="5_t4etn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StartGame" parent="." instance=ExtResource("2_qhtjn")]
+position = Vector2(176, 132)
+
+[node name="LevelSelect" parent="." instance=ExtResource("3_cm05x")]
+position = Vector2(994, 114)
+
+[node name="Options" parent="." instance=ExtResource("4_3s3pn")]
+position = Vector2(147, 580)
+
+[node name="Quit" parent="." instance=ExtResource("5_t4etn")]
+position = Vector2(995, 588)

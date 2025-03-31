@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq2t7ot8gvgce"]
+
+[ext_resource type="PackedScene" uid="uid://bxalv1feayja7" path="res://Player.tscn" id="1_roj0p"]
+[ext_resource type="PackedScene" uid="uid://dl7c32a1xrf7c" path="res://UC_Box.tscn" id="2_ke36v"]
+[ext_resource type="PackedScene" uid="uid://cm62eu3rfxiyq" path="res://SP_Box.tscn" id="3_74ckb"]
+[ext_resource type="PackedScene" uid="uid://bp5c3m6oauh4x" path="res://wall.tscn" id="4_jyf3k"]
+[ext_resource type="PackedScene" uid="uid://b7kwdx2krf870" path="res://long wall.tscn" id="5_onetd"]
+[ext_resource type="PackedScene" uid="uid://bgvee6m84tdx7" path="res://spike_pit.tscn" id="6_w573l"]
+
+[node name="TestingLevel" type="Node2D"]
+position = Vector2(192, 64)
+
+[node name="Player" parent="." instance=ExtResource("1_roj0p")]
+position = Vector2(160, 160)
+scale = Vector2(1.9798, 1.93072)
+
+[node name="Node2D15" parent="." instance=ExtResource("2_ke36v")]
+position = Vector2(256, 128)
+
+[node name="Node2D16" parent="." instance=ExtResource("3_74ckb")]
+position = Vector2(384, 128)
+
+[node name="Walls" parent="." instance=ExtResource("4_jyf3k")]
+disable_mode = 1
+
+[node name="Node2D2" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(192, 64)
+rotation = 3.14159
+
+[node name="Node2D3" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(384, 64)
+rotation = 3.14159
+
+[node name="Node2D4" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(576, 64)
+rotation = 3.14159
+
+[node name="Node2D5" parent="Walls" instance=ExtResource("4_jyf3k")]
+position = Vector2(640, 0)
+disable_mode = 1
+
+[node name="Node2D6" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(512, 448)
+
+[node name="Node2D7" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(320, 448)
+
+[node name="Node2D8" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(128, 448)
+
+[node name="Node2D9" parent="Walls" instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 448)
+disable_mode = 1
+
+[node name="Node2D10" parent="Walls" instance=ExtResource("4_jyf3k")]
+position = Vector2(640, 448)
+disable_mode = 1
+
+[node name="Node2D11" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(64, 128)
+rotation = 1.5708
+
+[node name="Node2D12" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(64, 320)
+rotation = 1.5708
+
+[node name="Node2D13" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(640, 384)
+rotation = -1.5708
+
+[node name="Node2D14" parent="Walls" instance=ExtResource("5_onetd")]
+position = Vector2(640, 192)
+rotation = -1.5708
+
+[node name="Node2D" parent="." instance=ExtResource("6_w573l")]
+position = Vector2(320, 256)

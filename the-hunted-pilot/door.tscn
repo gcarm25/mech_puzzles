@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://v8v0hjh1iwqb"]
+[gd_scene load_steps=12 format=3 uid="uid://v8v0hjh1iwqb"]
 
+[ext_resource type="Script" path="res://door.gd" id="1_upuyp"]
 [ext_resource type="Texture2D" uid="uid://hq3utat73rk1" path="res://assets/door.png" id="2_nfyo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emghv"]
@@ -73,12 +74,18 @@ animations = [{
 }]
 
 [node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_upuyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_emghv")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_f2sgh")
 autoplay = "default"
+
+[node name="WinRay" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+target_position = Vector2(-3, 0)
+hit_from_inside = true

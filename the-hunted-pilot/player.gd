@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed : int = 4     #Needs some testing
+@export var speed : int = 2     #Needs some testing
 @export var gravity_orb: PackedScene
 var screen_size
 const TILE_SIZE : int = 64
@@ -20,7 +20,6 @@ const inputs = {
 @onready var rayL = $RayCastLeft
 @onready var rayD = $RayCastDown
 @onready var rayU = $RayCastUp
-@onready var bulletDirection
 
 #func wait(seconds: float) -> void:
 #	await get_tree().create_timer(seconds).timeout
@@ -28,26 +27,28 @@ const inputs = {
 # Any time you need a delay, use it I guess
 
 
-func process_player_input():
-	if input_direction.y == 0:
-		input_direction.x = int(Input.get_action_strength("ui_right")) - int(Input.get_action_strength("ui_left"))
-	if input_direction.x == 0:
-		input_direction.y = int(Input.get_action_strength("ui_down")) - int(Input.get_action_strength("ui_up"))
+func process_player_input():    #Processes all inputs, movement and shooting
+	if input_direction.y == 0:    #Gets the x direction
+		input_direction.x = int(Input.get_action_strength("d_right")) - int(Input.get_action_strength("a_left"))
+	if input_direction.x == 0:    #Gets the y direction
+		input_direction.y = int(Input.get_action_strength("s_down")) - int(Input.get_action_strength("w_up"))
 	
-	if input_direction != Vector2.ZERO and !collision(input_direction):
-		initial_position = position
-		is_moving = true
+	if input_direction != Vector2.ZERO:
+		facing_direction = input_direction #Changing direction for the purpose of models and shooting
+		if !collision(input_direction): #Checks for collision before moving
+			initial_position = position
+			is_moving = true
 	
-	if Input.is_action_just_pressed("right_click"):
+	if Input.is_action_just_pressed("click"):
 		if can_fire:
 			can_fire = false
 			gravity_fire(facing_direction)
-			await get_tree().create_timer(1.25).timeout
+			await get_tree().create_timer(1.25).timeout  #This doesn't lock you out of other actions
 			can_fire = true
 
 func move(delta):
 	percent_moved_to_next_tile += speed*delta
-	if percent_moved_to_next_tile >= 1.0:
+	if percent_moved_to_next_tile >= 1.0:   #If you overshoot, corrects your position to the center of the tile
 		position = initial_position + (TILE_SIZE * input_direction)
 		percent_moved_to_next_tile = 0
 		is_moving = false
@@ -77,8 +78,6 @@ func gravity_fire(direction: Vector2):
 	get_parent().add_child(orb)
 	orb.position = position + direction * 32
 	orb.direction = direction
-	if orb.should_be_dead:
-		remove_child(orb)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -90,7 +89,6 @@ func _process(delta: float) -> void:
 	if is_moving == false:
 		process_player_input()
 	elif input_direction != Vector2.ZERO:
-		facing_direction = input_direction
 		move(delta)
 	else:
 		is_moving = false

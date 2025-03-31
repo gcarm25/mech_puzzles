@@ -7,8 +7,10 @@
 size = Vector2(64, 64)
 
 [node name="Node2D" type="StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
 collision_layer = 2
-collision_mask = 451
+collision_mask = 387
 script = ExtResource("1_ahvuc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,11 +18,65 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_emghv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 2
 position = Vector2(32, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("1_wql0m")
 
-[node name="CollisionRay" type="RayCast2D" parent="."]
-position = Vector2(32, 33)
-target_position = Vector2(0, -38)
+[node name="PitRayL" type="RayCast2D" parent="."]
+position = Vector2(0, 32)
+target_position = Vector2(0, 0)
 collision_mask = 195
+hit_from_inside = true
+
+[node name="PitRayU" type="RayCast2D" parent="."]
+position = Vector2(32, 0)
+target_position = Vector2(0, 0)
+collision_mask = 195
+hit_from_inside = true
+
+[node name="PitRayR" type="RayCast2D" parent="."]
+position = Vector2(64, 32)
+target_position = Vector2(0, 0)
+collision_mask = 195
+hit_from_inside = true
+
+[node name="PitRayD" type="RayCast2D" parent="."]
+position = Vector2(32, 64)
+target_position = Vector2(0, 0)
+collision_mask = 195
+hit_from_inside = true
+
+[node name="GravityDetectorL" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+target_position = Vector2(-40, 0)
+collision_mask = 256
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="GravityDetectorU" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+target_position = Vector2(0, -40)
+collision_mask = 256
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="GravityDetectorR" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+rotation = 3.14159
+target_position = Vector2(-40, 0)
+collision_mask = 256
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="GravityDetectorD" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+rotation = 3.14159
+target_position = Vector2(0, -40)
+collision_mask = 256
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false

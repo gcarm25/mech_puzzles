@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://g4cy0iibe7up"]
+
+[ext_resource type="PackedScene" uid="uid://bp5c3m6oauh4x" path="res://wall.tscn" id="1_e222h"]
+[ext_resource type="PackedScene" uid="uid://b7kwdx2krf870" path="res://long wall.tscn" id="2_1s283"]
+[ext_resource type="PackedScene" uid="uid://bgvee6m84tdx7" path="res://spike_pit.tscn" id="3_s511t"]
+[ext_resource type="PackedScene" uid="uid://v8v0hjh1iwqb" path="res://door.tscn" id="4_71t22"]
+[ext_resource type="PackedScene" uid="uid://bxalv1feayja7" path="res://Player.tscn" id="5_2w83r"]
+[ext_resource type="PackedScene" uid="uid://dl7c32a1xrf7c" path="res://UC_Box.tscn" id="6_o85pp"]
+
+[node name="Level" type="Node2D"]
+position = Vector2(192, 64)
+
+[node name="Walls" parent="." instance=ExtResource("1_e222h")]
+position = Vector2(-192, -64)
+disable_mode = 1
+
+[node name="Node2D2" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(192, 64)
+rotation = 3.14159
+
+[node name="Node2D3" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(384, 64)
+rotation = 3.14159
+
+[node name="Node2D18" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(768, 576)
+
+[node name="Node2D4" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(576, 64)
+rotation = 3.14159
+
+[node name="Node2D17" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(960, 576)
+
+[node name="Node2D15" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(768, 64)
+rotation = 3.14159
+
+[node name="Node2D16" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(960, 64)
+rotation = 3.14158
+
+[node name="Node2D5" parent="Walls" instance=ExtResource("1_e222h")]
+position = Vector2(1024, 0)
+disable_mode = 1
+
+[node name="Node2D6" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(576, 576)
+
+[node name="Node2D7" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(384, 576)
+
+[node name="Node2D8" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(192, 576)
+
+[node name="Node2D9" parent="Walls" instance=ExtResource("1_e222h")]
+position = Vector2(64, 576)
+disable_mode = 1
+
+[node name="Node2D10" parent="Walls" instance=ExtResource("1_e222h")]
+position = Vector2(1088, 576)
+disable_mode = 1
+
+[node name="Node2D11" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(64, 128)
+rotation = 1.5708
+
+[node name="Node2D12" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(64, 320)
+rotation = 1.5708
+
+[node name="Node2D11" parent="Walls/Node2D12" instance=ExtResource("2_1s283")]
+position = Vector2(191.996, -1024)
+rotation = 3.1416
+
+[node name="Node2D12" parent="Walls/Node2D12" instance=ExtResource("2_1s283")]
+position = Vector2(192, -0.000696182)
+rotation = 6.28319
+
+[node name="Node2D13" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(1088, 320)
+rotation = -1.5708
+
+[node name="Node2D14" parent="Walls" instance=ExtResource("2_1s283")]
+position = Vector2(1088, 128)
+rotation = -1.5708
+
+[node name="Spike1" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 0)
+
+[node name="Spike2" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 64)
+
+[node name="Spike3" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 128)
+
+[node name="Spike4" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 192)
+
+[node name="Spike5" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 256)
+
+[node name="Spike6" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 320)
+
+[node name="Spike7" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 384)
+
+[node name="Spike8" parent="." instance=ExtResource("3_s511t")]
+position = Vector2(448, 448)
+
+[node name="Door" parent="." instance=ExtResource("4_71t22")]
+position = Vector2(832, 192)
+
+[node name="Player" parent="." instance=ExtResource("5_2w83r")]
+position = Vector2(160, 160)
+scale = Vector2(1.9798, 1.93072)
+
+[node name="Box" parent="." instance=ExtResource("6_o85pp")]
+position = Vector2(64, 193)

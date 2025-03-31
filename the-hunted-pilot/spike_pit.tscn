@@ -41,9 +41,14 @@ shape = SubResource("RectangleShape2D_emghv")
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_c8dml")
 autoplay = "default"
-frame_progress = 0.381657
+frame_progress = 0.899549
 
 [node name="CollisionRay" type="RayCast2D" parent="."]
 position = Vector2(32, 32)
-target_position = Vector2(5, 0)
+target_position = Vector2(0, -4)
 collision_mask = 2
+hit_from_inside = true
+
+[node name="DeathRay" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+target_position = Vector2(-13, 0)
