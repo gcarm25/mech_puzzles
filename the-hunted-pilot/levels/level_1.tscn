@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://g4cy0iibe7up"]
+[gd_scene load_steps=6 format=4 uid="uid://g4cy0iibe7up"]
 
-[ext_resource type="PackedScene" uid="uid://bp5c3m6oauh4x" path="res://wall.tscn" id="1_e222h"]
-[ext_resource type="PackedScene" uid="uid://b7kwdx2krf870" path="res://long wall.tscn" id="2_1s283"]
+[ext_resource type="PackedScene" uid="uid://cyqs7eotsknvf" path="res://wilderness_tile_map.tscn" id="1_uv45i"]
 [ext_resource type="PackedScene" uid="uid://bgvee6m84tdx7" path="res://spike_pit.tscn" id="3_s511t"]
 [ext_resource type="PackedScene" uid="uid://v8v0hjh1iwqb" path="res://door.tscn" id="4_71t22"]
 [ext_resource type="PackedScene" uid="uid://bxalv1feayja7" path="res://Player.tscn" id="5_2w83r"]
@@ -10,110 +9,26 @@
 [node name="Level" type="Node2D"]
 position = Vector2(192, 64)
 
-[node name="Walls" parent="." instance=ExtResource("1_e222h")]
-position = Vector2(-192, -64)
-disable_mode = 1
-
-[node name="Node2D2" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(192, 64)
-rotation = 3.14159
-
-[node name="Node2D3" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(384, 64)
-rotation = 3.14159
-
-[node name="Node2D18" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(768, 576)
-
-[node name="Node2D4" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(576, 64)
-rotation = 3.14159
-
-[node name="Node2D17" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(960, 576)
-
-[node name="Node2D15" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(768, 64)
-rotation = 3.14159
-
-[node name="Node2D16" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(960, 64)
-rotation = 3.14158
-
-[node name="Node2D5" parent="Walls" instance=ExtResource("1_e222h")]
-position = Vector2(1024, 0)
-disable_mode = 1
-
-[node name="Node2D6" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(576, 576)
-
-[node name="Node2D7" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(384, 576)
-
-[node name="Node2D8" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(192, 576)
-
-[node name="Node2D9" parent="Walls" instance=ExtResource("1_e222h")]
-position = Vector2(64, 576)
-disable_mode = 1
-
-[node name="Node2D10" parent="Walls" instance=ExtResource("1_e222h")]
-position = Vector2(1088, 576)
-disable_mode = 1
-
-[node name="Node2D11" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(64, 128)
-rotation = 1.5708
-
-[node name="Node2D12" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(64, 320)
-rotation = 1.5708
-
-[node name="Node2D11" parent="Walls/Node2D12" instance=ExtResource("2_1s283")]
-position = Vector2(191.996, -1024)
-rotation = 3.1416
-
-[node name="Node2D12" parent="Walls/Node2D12" instance=ExtResource("2_1s283")]
-position = Vector2(192, -0.000696182)
-rotation = 6.28319
-
-[node name="Node2D13" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(1088, 320)
-rotation = -1.5708
-
-[node name="Node2D14" parent="Walls" instance=ExtResource("2_1s283")]
-position = Vector2(1088, 128)
-rotation = -1.5708
+[node name="WildernessTileMap" parent="." instance=ExtResource("1_uv45i")]
+light_mask = 128
+visibility_layer = 128
+position = Vector2(-200, -72)
+tile_map_data = PackedByteArray("AAACAAYAAwAAAAIAAAACAAIAAwAAAAUAAABGAAIAAwAFAAQAAAAGAAIAAwAFAAEAAAAKAAIAAwAFAAEAAAAOAAIAAwAFAAEAAAASAAIAAwAFAAEAAAAWAAIAAwAFAAEAAAAaAAIAAwAFAAEAAAAeAAIAAwAFAAEAAAAiAAIAAwAFAAEAAAAmAAIAAwAFAAEAAAAqAAIAAwAFAAEAAAAuAAIAAwAFAAEAAAAyAAIAAwAFAAEAAAA2AAIAAwAAAAQAAAA6AAIAAwAFAAEAAAA+AAIAAwAFAAEAAABCAAIAAwAFAAEAAABGAAYAAwAEAAEAAABGAAoAAwAEAAEAAABGAA4AAwAEAAEAAABGABIAAwAEAAEAAABGABYAAwAEAAEAAABGABoAAwAEAAEAAABGAB4AAwAEAAEAAABGACIAAwAEAAEAAABGACYAAwAEAAQAAABCACYAAwADAAEAAAA+ACYAAwADAAEAAAA6ACYAAwADAAEAAAA2ACYAAwABAAUAAAAyACYAAwAEAAQAAAAuACYAAwADAAEAAAAqACYAAwADAAEAAAAmACYAAwADAAEAAAAiACYAAwADAAEAAAAeACYAAwADAAEAAAAaACYAAwADAAEAAAAWACYAAwADAAEAAAASACYAAwADAAEAAAAOACYAAwADAAEAAAAKACYAAwADAAEAAAAGACYAAwADAAEAAAACACYAAwABAAUAAAACACIAAwAAAAIAAAACAB4AAwAAAAIAAAACABoAAwAAAAIAAAACABYAAwAAAAIAAAACABIAAwAAAAIAAAACAA4AAwAAAAIAAAACAAoAAwAAAAIAAAA2AAYAAwAEAAIAAAA2AAoAAwAEAAIAAAA2AA4AAwAEAAIAAAA2ABIAAwADAAAAAAA2ACIAAwABAAEAAAAyACIAAwACAAEAAAACACoAAwACAAUAAAAGACoAAwACAAUAAAAKACoAAwACAAUAAAAOACoAAwACAAUAAAASACoAAwACAAUAAAAWACoAAwACAAUAAAAaACoAAwACAAUAAAAeACoAAwACAAUAAAAiACoAAwACAAUAAAAmACoAAwACAAUAAAAqACoAAwACAAUAAAAuACoAAwACAAUAAAAyACoAAwACAAUAAAA2ACoAAwACAAUAAAA6ACoAAwACAAUAAAA+ACoAAwACAAUAAABCACoAAwACAAUAAABGACoAAwACAAUAAAAGAAYAAwACAAUAAAAKAAYAAwACAAUAAAAOAAYAAwACAAUAAAAKAAoAAwACAAUAAAAGAAoAAwACAAUAAAAGAA4AAwACAAUAAAAOAAoAAwACAAUAAAASAAYAAwACAAUAAAAWAAYAAwACAAUAAAA=")
 
 [node name="Spike1" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 0)
+position = Vector2(640, 256)
 
 [node name="Spike2" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 64)
+position = Vector2(640, 320)
 
 [node name="Spike3" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 128)
-
-[node name="Spike4" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 192)
-
-[node name="Spike5" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 256)
-
-[node name="Spike6" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 320)
-
-[node name="Spike7" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 384)
-
-[node name="Spike8" parent="." instance=ExtResource("3_s511t")]
-position = Vector2(448, 448)
+position = Vector2(640, 384)
 
 [node name="Door" parent="." instance=ExtResource("4_71t22")]
-position = Vector2(832, 192)
+position = Vector2(768, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_2w83r")]
-position = Vector2(160, 160)
+position = Vector2(-32, 160)
 scale = Vector2(1.9798, 1.93072)
 
 [node name="Box" parent="." instance=ExtResource("6_o85pp")]

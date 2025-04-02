@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://falutk72koy0"]
 
 [ext_resource type="Script" path="res://menu_buttons/quit_button.gd" id="2_5a0rn"]
-[ext_resource type="Texture2D" uid="uid://6xu86qbmq5lq" path="res://assets/menu_button.png" id="2_poslv"]
+[ext_resource type="Texture2D" uid="uid://6xu86qbmq5lq" path="res://assets/menu_buttons/menu_button.png" id="2_poslv"]
 
 [node name="MenuButton" type="Node2D"]
 position = Vector2(32, 32)
