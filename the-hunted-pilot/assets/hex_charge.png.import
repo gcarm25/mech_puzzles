@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dueg46irwb5xq"
-path="res://.godot/imported/gravity_ball.png-2365beb2a67dbe40cc0b9960132e32a9.ctex"
+uid="uid://lsry24vf7mm5"
+path="res://.godot/imported/hex_charge.png-fcd7e4337ec9bfc407ccbf107d207cd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gravity_ball.png"
-dest_files=["res://.godot/imported/gravity_ball.png-2365beb2a67dbe40cc0b9960132e32a9.ctex"]
+source_file="res://assets/hex_charge.png"
+dest_files=["res://.godot/imported/hex_charge.png-fcd7e4337ec9bfc407ccbf107d207cd2.ctex"]
 
 [params]
 

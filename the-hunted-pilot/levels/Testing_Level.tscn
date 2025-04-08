@@ -1,76 +1,226 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq2t7ot8gvgce"]
+[gd_scene load_steps=12 format=4 uid="uid://bq2t7ot8gvgce"]
 
-[ext_resource type="PackedScene" uid="uid://bxalv1feayja7" path="res://Player.tscn" id="1_roj0p"]
-[ext_resource type="PackedScene" uid="uid://dl7c32a1xrf7c" path="res://UC_Box.tscn" id="2_ke36v"]
-[ext_resource type="PackedScene" uid="uid://cm62eu3rfxiyq" path="res://SP_Box.tscn" id="3_74ckb"]
-[ext_resource type="PackedScene" uid="uid://bp5c3m6oauh4x" path="res://wall.tscn" id="4_jyf3k"]
-[ext_resource type="PackedScene" uid="uid://b7kwdx2krf870" path="res://long wall.tscn" id="5_onetd"]
-[ext_resource type="PackedScene" uid="uid://bgvee6m84tdx7" path="res://spike_pit.tscn" id="6_w573l"]
+[ext_resource type="PackedScene" uid="uid://bxalv1feayja7" path="res://player_parts/Player.tscn" id="1_roj0p"]
+[ext_resource type="Script" path="res://levels/testing_level.gd" id="1_s2yks"]
+[ext_resource type="PackedScene" uid="uid://cyqs7eotsknvf" path="res://wilderness_tile_map.tscn" id="2_hh3jv"]
+[ext_resource type="PackedScene" uid="uid://dl7c32a1xrf7c" path="res://puzzle_pieces/UC_Box.tscn" id="2_ke36v"]
+[ext_resource type="PackedScene" uid="uid://cm62eu3rfxiyq" path="res://puzzle_pieces/SP_Box.tscn" id="3_74ckb"]
+[ext_resource type="PackedScene" uid="uid://bp5c3m6oauh4x" path="res://puzzle_pieces/breakable_wall.tscn" id="4_jyf3k"]
+[ext_resource type="PackedScene" uid="uid://bgvee6m84tdx7" path="res://puzzle_pieces/spike_pit.tscn" id="6_w573l"]
+[ext_resource type="PackedScene" uid="uid://cmustj7msvjl3" path="res://puzzle_pieces/button.tscn" id="7_vb8rl"]
+[ext_resource type="PackedScene" uid="uid://b7fw8lchyx3mg" path="res://puzzle_pieces/wire.tscn" id="8_yujtw"]
+[ext_resource type="PackedScene" uid="uid://c28ih4wk0f2x2" path="res://puzzle_pieces/bridge_2_length.tscn" id="9_q0dja"]
+[ext_resource type="PackedScene" uid="uid://c370u7jvob62c" path="res://puzzle_pieces/explosive_plant.tscn" id="10_jdjp7"]
 
 [node name="TestingLevel" type="Node2D"]
 position = Vector2(192, 64)
+script = ExtResource("1_s2yks")
 
-[node name="Player" parent="." instance=ExtResource("1_roj0p")]
-position = Vector2(160, 160)
-scale = Vector2(1.9798, 1.93072)
+[node name="WildernessTileMap" parent="." instance=ExtResource("2_hh3jv")]
+show_behind_parent = true
+position = Vector2(-200, -72)
+tile_map_data = PackedByteArray("AAA6ACYAAQABAAQAAAA6AAIAAQABAAQAAGAKAAIAAQABAAQAADAKACYAAQABAAQAAFAOACYAAQADAAIAAAASACYAAQADAAIAAAAWACYAAQADAAIAAAAaACYAAQADAAIAAAAeACYAAQADAAIAAAAiACYAAQADAAIAAAAmACYAAQADAAIAAAAqACYAAQADAAIAAAAuACYAAQADAAMAAAAyACYAAQADAAIAAAA2ACYAAQADAAIAAAA6ACIAAQADAAIAAGA6AB4AAQADAAIAAGA6ABoAAQADAAIAAGA6ABYAAQADAAIAAGA6ABIAAQADAAIAAGA6AA4AAQADAAIAAGA6AAoAAQADAAIAAGA6AAYAAQADAAIAAGA2AAIAAQADAAIAADAyAAIAAQADAAIAADAuAAIAAQADAAIAADAqAAIAAQADAAIAADAmAAIAAQADAAIAADAiAAIAAQADAAIAADAeAAIAAQADAAIAADAaAAIAAQADAAIAADAWAAIAAQADAAIAADASAAIAAQADAAIAADAOAAIAAQADAAIAADAKAAYAAQADAAIAAFAKAAoAAQADAAIAAFAKAA4AAQADAAIAAFAKABIAAQADAAIAAFAKABYAAQADAAIAAFAKABoAAQADAAIAAFAKAB4AAQADAAIAAFAKACIAAQADAAIAAFAyACIAAQACAAAAAGAyAB4AAQADAAAAAGAyABoAAQADAAAAAGAuABoAAQADAAEAAFA2ACIAAQACAAAAADA2AB4AAQADAAAAAFA2ABoAAQADAAAAAFA2ABYAAQAAAAEAAAA2ABIAAQADAAAAAFA2AA4AAQADAAAAAFA2AAoAAQADAAAAAFA2AAYAAQACAAAAAFAyAAYAAQADAAAAAAAuAAYAAQADAAAAAAAqAAYAAQADAAAAAAAmAAYAAQADAAAAAAAiAAYAAQADAAAAAAAeAAYAAQADAAAAAAAaAAYAAQADAAAAAAAWAAYAAQADAAAAAAASAAYAAQADAAAAAAAOAAYAAQACAAAAAAAOAAoAAQADAAAAAGAOAA4AAQADAAAAAGAOABIAAQADAAAAAGAOABYAAQADAAAAAGAOABoAAQADAAAAAGAOAB4AAQADAAAAAGAOACIAAQACAAAAAGASACIAAQADAAAAADAWACIAAQADAAAAADAaACIAAQADAAAAADAeACIAAQADAAAAADAiACIAAQADAAAAADAmACIAAQADAAAAADAqACIAAQACAAAAADAuACIAAQAAAAMAAFAuAB4AAQAAAAMAAFAqAB4AAQACAAAAAFAqABoAAQACAAEAAGAyABYAAQAAAAEAAAAuABYAAQADAAAAADAqABYAAQADAAAAADAmAB4AAQAAAAEAAAAaAB4AAQAAAAEAAAAWAB4AAQAAAAEAAAASAB4AAQAAAAEAAAASABoAAQAAAAEAAAASABYAAQAAAAEAAAASABIAAQAAAAEAAAASAA4AAQAAAAEAAAASAAoAAQAAAAEAAAAWAAoAAQAAAAEAAAAaAAoAAQAAAAEAAAAeAAoAAQAAAAEAAAAiAAoAAQAAAAEAAAAmAAoAAQAAAAEAAAAqAAoAAQAAAAEAAAAuAAoAAQAAAAEAAAAyAAoAAQAAAAEAAAAyAA4AAQAAAAEAAAAyABIAAQAAAAEAAAAuABIAAQAAAAEAAAAuAA4AAQAAAAEAAAAqAA4AAQAAAAEAAAAqABIAAQAAAAEAAAAmAA4AAQAAAAEAAAAmABIAAQAAAAEAAAAiABoAAQAAAAEAAAAiAA4AAQAAAAEAAAAeAA4AAQAAAAEAAAAeABIAAQAAAAEAAAAaABYAAQAAAAEAAAAaABIAAQAAAAEAAAAaAA4AAQAAAAEAAAAWAA4AAQAAAAEAAAAWABIAAQAAAAEAAAAWABYAAQAAAAEAAAAWABoAAQAAAAEAAAAeAB4AAQADAAAAAAAiAB4AAQADAAAAAAAmABoAAQADAAAAAFAmABYAAQADAAAAAGAiABIAAQADAAAAADAaABoAAQADAAAAAFAeABYAAQACAAAAADA=")
 
-[node name="Node2D15" parent="." instance=ExtResource("2_ke36v")]
-position = Vector2(256, 128)
+[node name="Spikes_0" parent="." instance=ExtResource("6_w573l")]
+position = Vector2(320, 256)
 
-[node name="Node2D16" parent="." instance=ExtResource("3_74ckb")]
-position = Vector2(384, 128)
+[node name="Spikes_1" parent="." instance=ExtResource("6_w573l")]
+position = Vector2(256, 320)
+
+[node name="Spikes_2" parent="." instance=ExtResource("6_w573l")]
+position = Vector2(320, 320)
+
+[node name="Button" parent="." instance=ExtResource("7_vb8rl")]
+position = Vector2(128, 256)
+
+[node name="Wire" parent="." instance=ExtResource("8_yujtw")]
+position = Vector2(160, 352)
+rotation = -1.57079
+
+[node name="Wire2" parent="." instance=ExtResource("8_yujtw")]
+position = Vector2(224, 352)
+rotation = -3.14159
+
+[node name="Bridge" parent="." instance=ExtResource("9_q0dja")]
+position = Vector2(256, 320)
+
+[node name="Box_1" parent="." instance=ExtResource("2_ke36v")]
+position = Vector2(256, 256)
+
+[node name="Box_0" parent="." instance=ExtResource("2_ke36v")]
+position = Vector2(256, 192)
+
+[node name="Synth_Box" parent="." instance=ExtResource("3_74ckb")]
+position = Vector2(128, 192)
 
 [node name="Walls" parent="." instance=ExtResource("4_jyf3k")]
 disable_mode = 1
 
-[node name="Node2D2" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(192, 64)
-rotation = 3.14159
-
-[node name="Node2D3" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(384, 64)
-rotation = 3.14159
-
-[node name="Node2D4" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(576, 64)
-rotation = 3.14159
-
-[node name="Node2D5" parent="Walls" instance=ExtResource("4_jyf3k")]
+[node name="Node2D5" parent="." instance=ExtResource("4_jyf3k")]
 position = Vector2(640, 0)
 disable_mode = 1
 
-[node name="Node2D6" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(512, 448)
-
-[node name="Node2D7" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(320, 448)
-
-[node name="Node2D8" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(128, 448)
-
-[node name="Node2D9" parent="Walls" instance=ExtResource("4_jyf3k")]
+[node name="Node2D9" parent="." instance=ExtResource("4_jyf3k")]
 position = Vector2(0, 448)
 disable_mode = 1
 
-[node name="Node2D10" parent="Walls" instance=ExtResource("4_jyf3k")]
+[node name="Node2D15" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(64, 128)
+disable_mode = 1
+
+[node name="Node2D17" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(256, 128)
+disable_mode = 1
+
+[node name="Node2D18" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(448, 128)
+disable_mode = 1
+
+[node name="Node2D21" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(128, 64)
+disable_mode = 1
+
+[node name="Node2D19" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(384, 192)
+disable_mode = 1
+
+[node name="Node2D20" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(320, 128)
+disable_mode = 1
+
+[node name="Node2D16" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(128, 320)
+disable_mode = 1
+
+[node name="Node2D10" parent="." instance=ExtResource("4_jyf3k")]
 position = Vector2(640, 448)
 disable_mode = 1
 
-[node name="Node2D11" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(64, 128)
-rotation = 1.5708
-
-[node name="Node2D12" parent="Walls" instance=ExtResource("5_onetd")]
-position = Vector2(64, 320)
-rotation = 1.5708
-
-[node name="Node2D13" parent="Walls" instance=ExtResource("5_onetd")]
+[node name="Node2D11" parent="." instance=ExtResource("4_jyf3k")]
 position = Vector2(640, 384)
-rotation = -1.5708
+disable_mode = 1
 
-[node name="Node2D14" parent="Walls" instance=ExtResource("5_onetd")]
+[node name="Node2D12" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(640, 320)
+disable_mode = 1
+
+[node name="Node2D13" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(640, 256)
+disable_mode = 1
+
+[node name="Node2D14" parent="." instance=ExtResource("4_jyf3k")]
 position = Vector2(640, 192)
-rotation = -1.5708
+disable_mode = 1
 
-[node name="Node2D" parent="." instance=ExtResource("6_w573l")]
-position = Vector2(320, 256)
+[node name="Node2D22" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(640, 128)
+disable_mode = 1
+
+[node name="Node2D23" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(640, 64)
+disable_mode = 1
+
+[node name="Node2D24" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(576, 0)
+disable_mode = 1
+
+[node name="Node2D25" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(512, 0)
+disable_mode = 1
+
+[node name="Node2D26" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(448, 0)
+disable_mode = 1
+
+[node name="Node2D27" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(384, 0)
+disable_mode = 1
+
+[node name="Node2D28" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(320, 0)
+disable_mode = 1
+
+[node name="Node2D29" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(256, 0)
+disable_mode = 1
+
+[node name="Node2D30" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(192, 0)
+disable_mode = 1
+
+[node name="Node2D31" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(128, 0)
+disable_mode = 1
+
+[node name="Node2D32" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(64, 0)
+disable_mode = 1
+
+[node name="Node2D33" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 64)
+disable_mode = 1
+
+[node name="Node2D34" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 128)
+disable_mode = 1
+
+[node name="Node2D35" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 192)
+disable_mode = 1
+
+[node name="Node2D36" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 256)
+disable_mode = 1
+
+[node name="Node2D37" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 320)
+disable_mode = 1
+
+[node name="Node2D38" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(0, 384)
+disable_mode = 1
+
+[node name="Node2D39" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(64, 448)
+disable_mode = 1
+
+[node name="Node2D40" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(128, 448)
+disable_mode = 1
+
+[node name="Node2D41" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(192, 448)
+disable_mode = 1
+
+[node name="Node2D42" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(256, 448)
+disable_mode = 1
+
+[node name="Node2D43" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(320, 448)
+disable_mode = 1
+
+[node name="Node2D44" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(384, 448)
+disable_mode = 1
+
+[node name="Node2D45" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(448, 448)
+disable_mode = 1
+
+[node name="Node2D46" parent="." instance=ExtResource("4_jyf3k")]
+position = Vector2(576, 448)
+disable_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_roj0p")]
+position = Vector2(224, 96)
+scale = Vector2(1.9798, 1.93072)
+
+[node name="exp_plant_0" parent="." instance=ExtResource("10_jdjp7")]
+position = Vector2(160, 160)
+
+[node name="exp_plant_1" parent="." instance=ExtResource("10_jdjp7")]
+position = Vector2(224, 160)
+
+[node name="exp_plant_2" parent="." instance=ExtResource("10_jdjp7")]
+position = Vector2(416, 160)

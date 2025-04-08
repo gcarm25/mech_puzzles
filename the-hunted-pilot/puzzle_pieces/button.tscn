@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmustj7msvjl3"]
+
+[ext_resource type="Script" path="res://puzzle_pieces/in_game_button.gd" id="1_1ptit"]
+[ext_resource type="Texture2D" uid="uid://dwl0mciyxttv" path="res://assets/button.png" id="1_tse47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emghv"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v7qd"]
+atlas = ExtResource("1_tse47")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tes13"]
+atlas = ExtResource("1_tse47")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2sgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v7qd")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tes13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="StaticBody2D"]
+collision_layer = 32768
+collision_mask = 3
+script = ExtResource("1_1ptit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 32768
+visibility_layer = 3
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_emghv")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_f2sgh")
+animation = &"active"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(32, 40)
+target_position = Vector2(0, -16)
+collision_mask = 3
+hit_from_inside = true

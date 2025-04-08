@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dueg46irwb5xq"
-path="res://.godot/imported/gravity_ball.png-2365beb2a67dbe40cc0b9960132e32a9.ctex"
+uid="uid://byy7fsymlpboc"
+path="res://.godot/imported/grassy_tilesheet_reduced.png-00d1396a2ee8925132f4398328a4a61d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gravity_ball.png"
-dest_files=["res://.godot/imported/gravity_ball.png-2365beb2a67dbe40cc0b9960132e32a9.ctex"]
+source_file="res://assets/tile_sheets/grassy_tilesheet_reduced.png"
+dest_files=["res://.godot/imported/grassy_tilesheet_reduced.png-00d1396a2ee8925132f4398328a4a61d.ctex"]
 
 [params]
 

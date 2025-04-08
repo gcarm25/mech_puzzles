@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://bp5c3m6oauh4x"]
+
+[ext_resource type="Script" path="res://puzzle_pieces/breakable_wall.gd" id="1_rcxu8"]
+[ext_resource type="Texture2D" uid="uid://cqjb11jjwdx00" path="res://assets/grassy_breakable_wall.png" id="2_2ugqt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emghv"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss3qf"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si45w"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8asqe"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43d2l"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66fvu"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycr1l"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaoxc"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok070"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cutil"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nufdt"]
+atlas = ExtResource("2_2ugqt")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46okr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss3qf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si45w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8asqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43d2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66fvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycr1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaoxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok070")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cutil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nufdt")
+}],
+"loop": false,
+"name": &"destroyed",
+"speed": 12.0
+}]
+
+[node name="Node2D" type="StaticBody2D"]
+collision_layer = 128
+script = ExtResource("1_rcxu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_emghv")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_46okr")
+autoplay = "default"
+
+[node name="ExpRay" type="RayCast2D" parent="."]
+position = Vector2(32, 32)
+target_position = Vector2(0, -8)
+collision_mask = 3072
+hit_from_inside = true
+collide_with_areas = true

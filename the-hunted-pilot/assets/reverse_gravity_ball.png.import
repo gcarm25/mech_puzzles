@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dueg46irwb5xq"
-path="res://.godot/imported/gravity_ball.png-2365beb2a67dbe40cc0b9960132e32a9.ctex"
+uid="uid://hdd3b2c86nk"
+path="res://.godot/imported/reverse_gravity_ball.png-262b74d70462118c11a8067dabee5815.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gravity_ball.png"
-dest_files=["res://.godot/imported/gravity_ball.png-2365beb2a67dbe40cc0b9960132e32a9.ctex"]
+source_file="res://assets/reverse_gravity_ball.png"
+dest_files=["res://.godot/imported/reverse_gravity_ball.png-262b74d70462118c11a8067dabee5815.ctex"]
 
 [params]
 
