@@ -54,3 +54,54 @@ Some things I intend to add before the end of the block are
 3. An Options screen
 4. Basic enemies
 5. At least 4 more levels
+
+
+# Beta Release
+(Demonstration in Person)
+
+## REQUIREMENTS MET/NOT MET
+Looking back at my proposal, I was much more ambishous with what I aimed to complete. I ultimately did not allot enough time for the basics of the program, the building blocks that the rest of the tower of cards was to be built on. I haven't even started on enemies, the story hasn't been implemented at all, and I still only have one level complete. It is far from a finished product. I did suffer from several delays, but even without those, I would probably need another block to complete what I had initially set out to do.
+
+What I did meet though, I think I did well. The sprites and animations look nice (except maybe the boxes), the tools all work as intended with only a few exceptions, and the player's movement (and turning!) work flawlessly. Unfortunately, those building blocks took up *all* the time I had with countless hours of bug fixing and troubleshooting and the back and forth of importing the sprite only to find I missed a detail and needing to edit it again.
+
+## METHODS
+Game Engine Used: Godot
+
+App for Pixel Art: Piskel
+
+### Folder Organization
+
+![image](https://github.com/user-attachments/assets/9e775171-c14e-4b85-8fa6-846cc90d59d0)
+![image](https://github.com/user-attachments/assets/4454c1b0-f028-4373-bb56-6bfc532066b5)
+
+![image](https://github.com/user-attachments/assets/61a1ba72-74ac-47b1-b042-a07ae7765bdf)
+
+## PROJECT MANAGEMENT
+Project Management is probably where I suffered the most time lost. I had a solid plan going into the block, but it didn't last, and as I started falling behind my schedule, I lost a lot of motivation to make progress. I did eventaully pick myself back up, which is why you're still seeing this. I tracked my progress with the timeline in my proposal paper, using each activity as a goal for the day. Using that metric, I completed 1 week of work in the first 2 weeks.
+
+## WHAT YOU LEARNED
+The most important skill I developed this block was learning how to learn. Okay that sounds stupid, by that I mean it was learning a new language in 2 weeks. It was something I meant to do in block 5 & 6, but after a surgery and switching classes, I never had the time to learn the language when I planned to, so I had to learn it in the first 2 weeks of the block to be able to make progress. Being able to pick up a new language in a short time is certainly a helpful skill to have.
+
+I also learned how *not* to divide my work, mainly by failling to properly divide my work and suffering for it.
+
+## PROBLEMS AND SOLUTIONS
+Games are very buggy during development. Most of these I wouldn't consider significant problems, but there are a few I'd like to share.
+
+Exploding buds spawning in the wrong position (corrected by changing the position in the bud code rather than the plant's code)
+
+![image](https://github.com/user-attachments/assets/624338d0-b443-44af-b854-7c3a4270367d)
+
+Collision rays colliding with parent of parent node because "exclude parent node" only goes up one layer I guess
+
+![image](https://github.com/user-attachments/assets/8ccb09a1-7f57-4ff2-8d5f-2ab51498c4fa)
+![image](https://github.com/user-attachments/assets/9db26c27-f931-4933-8435-7c6499934899)
+
+If the bridge node lost power before it finnished extending, the second bridge segment would stay there (fixed by making it only retract after fully extending)
+
+![image](https://github.com/user-attachments/assets/3e03cbb4-a861-446f-8e6f-88666480e854)
+
+
+All of these problems I fixed myself, the ones I needed more outside help with were in the Alpha release
+
+## WHAT NEXT?
+With more time, I would like to make this game into a full game I consider worth publishing for the general public. Even with one more block I believe I could get it to a state that would be publishable, but I have no way of knowing without going for it at this point.
